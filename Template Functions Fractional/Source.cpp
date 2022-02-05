@@ -18,7 +18,7 @@ int print_menu(int key) {
 
 double rand(double MIN_RANGE, double MAX_RANGE)
 {
-    return MIN_RANGE + (rand() % static_cast<unsigned int>((MAX_RANGE - MIN_RANGE) * 1000)) / 1000.;
+    return MIN_RANGE + (rand_r() % static_cast<unsigned int>((MAX_RANGE - MIN_RANGE) * 1000)) / 1000.;
 }
 
 template<typename Type>
@@ -57,16 +57,12 @@ int main()
 {
     setlocale(LC_ALL, "Russian");
     int count_elem = print_menu(1), variant = 0;
-
     srand(time(NULL));
     do
     {
         int m, n;
-        cout << "\n\t\tМатрица, [n x m]" << endl;
-        cout << "\t\tВведите n: ";
-        cin >> n;
-        cout << "\t\tВведите m: ";
-        cin >> m;
+        cout << "\n\t\tМатрица, [n x m]\n\t\tВведите n и m: " << endl;
+        cin >> n >> m;
         cout << "\t\tВведите левую и правую границы диапазона генерации через пробел: " << endl;
         cin >> MIN_RANGE >> MAX_RANGE;
         print_menu(0);
@@ -80,7 +76,7 @@ int main()
                 mas[i] = new int[m];
                 for (int j = 0; j < m; j++)
                 {
-                    mas[i][j] = rand() % MAX_RANGE + MIN_RANGE;
+                    mas[i][j] = rand_r() % MAX_RANGE + MIN_RANGE;
                     cout << mas[i][j] << " ";
                 }
                 cout << endl;
