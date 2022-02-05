@@ -2,10 +2,10 @@
 
 #include "Configuration.h"
 
-// Êëàññ òèïà "Äðîáíîå ÷èñëî"
+// ÐšÐ»Ð°ÑÑ Ñ‚Ð¸Ð¿Ð° "Ð”Ñ€Ð¾Ð±Ð½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾"
 class Fractional
 {
-	// Ïîëÿ ñ ÷èñëèòåëåì è çíàìåíàòåëåì
+	// ÐŸÐ¾Ð»Ñ Ñ Ñ‡Ð¸ÑÐ»Ð¸Ñ‚ÐµÐ»ÐµÐ¼ Ð¸ Ð·Ð½Ð°Ð¼ÐµÐ½Ð°Ñ‚ÐµÐ»ÐµÐ¼
 	int numerator;
 	int denominator;
 public:
@@ -15,23 +15,23 @@ public:
 	void setNumerator(istream& stream) { stream >> numerator; }
 	void setDenominator(istream& stream) { stream >> denominator; }
 
-	// Ìåòîäû ââîäà/âûâîäà ïîëåé
+	// ÐœÐµÑ‚Ð¾Ð´Ñ‹ Ð²Ð²Ð¾Ð´Ð°/Ð²Ñ‹Ð²Ð¾Ð´Ð° Ð¿Ð¾Ð»ÐµÐ¹
 	ostream& print(ostream& stream) const;
 	istream& scan(istream& stream);
 
-	// Ïåðåãðóçêà îïåðàöèè ïðèñâàèâàíèÿ
+	// ÐŸÐµÑ€ÐµÐ³Ñ€ÑƒÐ·ÐºÐ° Ð¾Ð¿ÐµÑ€Ð°Ñ†Ð¸Ð¸ Ð¿Ñ€Ð¸ÑÐ²Ð°Ð¸Ð²Ð°Ð½Ð¸Ñ
 	Fractional& operator = (const Fractional& F);
 
-	// Ïåðåãðóçêà îïåðàöèè ïðèñâàèâàíèÿ äëÿ ãåíåðàöèè ñëó÷àéíûõ çíà÷åíèé ïîëåé
+	// ÐŸÐµÑ€ÐµÐ³Ñ€ÑƒÐ·ÐºÐ° Ð¾Ð¿ÐµÑ€Ð°Ñ†Ð¸Ð¸ Ð¿Ñ€Ð¸ÑÐ²Ð°Ð¸Ð²Ð°Ð½Ð¸Ñ Ð´Ð»Ñ Ð³ÐµÐ½ÐµÑ€Ð°Ñ†Ð¸Ð¸ ÑÐ»ÑƒÑ‡Ð°Ð¹Ð½Ñ‹Ñ… Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ð¹ Ð¿Ð¾Ð»ÐµÐ¹
 	Fractional& operator = (double _numerator);
 
-	// Ïåðåãðóçêà îïåðàöèé ñðàâíåíèÿ
+	// ÐŸÐµÑ€ÐµÐ³Ñ€ÑƒÐ·ÐºÐ° Ð¾Ð¿ÐµÑ€Ð°Ñ†Ð¸Ð¹ ÑÑ€Ð°Ð²Ð½ÐµÐ½Ð¸Ñ
 	bool operator > (const Fractional& F) const;
 	bool operator < (const Fractional& F) const;
 
 	friend double operator += (double& i, Fractional& F);
 	
-	// Ïåðåãðóçêà ïîòîêîâ ââîäà/âûâîäà ïîëåé
+	// ÐŸÐµÑ€ÐµÐ³Ñ€ÑƒÐ·ÐºÐ° Ð¿Ð¾Ñ‚Ð¾ÐºÐ¾Ð² Ð²Ð²Ð¾Ð´Ð°/Ð²Ñ‹Ð²Ð¾Ð´Ð° Ð¿Ð¾Ð»ÐµÐ¹
 	friend ostream& operator << (ostream& stream, const Fractional& F);
 	friend istream& operator >> (istream& stream, Fractional& F);
 };
